@@ -1,0 +1,14 @@
+{
+  "name": "giantpeach/query",
+  "autoload": {
+    "psr-4": {
+      "Giantpeach\\Schnapps\\Query\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Giant Peach"
+    }
+  ],
+  "require": {}
+}
