@@ -30,7 +30,7 @@ class Post
     $this->title = $post->post_title;
     $this->content = $post->post_content;
     $this->link = \get_permalink($post->ID);
-    $this->image = \get_the_post_thumbnail_url($post->ID);
+    $this->image = $this->getImageUrl($post->ID);
     $this->date = $post->post_date;
     $this->author = $post->post_author;
     $this->categories = \get_the_category($post->ID);
