@@ -51,7 +51,7 @@ class Post
 
   private function getImageUrl($postId)
   {
-    if (class_exists('Giantpeach\Schnapps\Images\Images')) {
+    if (class_exists('\Giantpeach\Schnapps\Images\Images')) {
       $id = \get_post_thumbnail_id($postId);
       return \Giantpeach\Schnapps\Images\Images::getInstance()->getGlideImageUrl($id);
     }
