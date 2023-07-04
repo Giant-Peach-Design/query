@@ -48,4 +48,14 @@ class Post
     $this->meta = \get_post_meta($post->ID);
     $this->acf = \get_fields($post->ID);
   }
+
+  private function getImageUrl($postId)
+  {
+    if (class_exists('Giantpeach\Schnapps\Images\Images')) {
+      $id = \get_post_thumbnail_id($postId);
+      return \Giantpeach\Schnapps\Images\Images::getInstance()->getGlideImageUrl($id);
+    }
+
+    return \get_the_post_thumbnail_url($postId);
+  }
 }
