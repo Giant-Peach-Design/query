@@ -27,6 +27,10 @@ class Post
 
   public function __construct($post)
   {
+    if (is_int($post)) {
+      $post = \get_post($post);
+    }
+
     $this->title = $post->post_title;
     $this->content = $post->post_content;
     $this->link = \get_permalink($post->ID);
