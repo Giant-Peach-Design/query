@@ -4,11 +4,11 @@ namespace Giantpeach\Schnapps\Query;
 
 class Query
 {
-  public static function getPosts($args = [])
+  public static function getPosts(string $postType = 'post', int $perPage = 3, $args = [])
   {
     $defaults = [
-      'post_type' => 'post',
-      'posts_per_page' => 3,
+      'post_type' => $postType,
+      'posts_per_page' => $perPage,
     ];
 
     $args = array_merge($defaults, $args);
