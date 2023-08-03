@@ -33,6 +33,10 @@ class PostType
     $defaults = [
       'public' => true,
       'hierarchical' => true,
+      'show_in_rest' => true,
+      'labels' => [
+        'name' => ucfirst($name),
+      ]
     ];
 
     $args = array_merge($defaults, $args);
