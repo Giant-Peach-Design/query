@@ -23,7 +23,7 @@ class Post
   public string $ping_status;
   public string $template;
   public array $meta;
-  public array $acf;
+  public $acf;
 
   public function __construct($post)
   {
