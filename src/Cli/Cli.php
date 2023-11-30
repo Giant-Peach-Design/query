@@ -12,7 +12,7 @@ class Cli
 
   public function registerCommands()
   {
-    \WP_CLI::add_command('create-post-type', [$this, 'create-post-type']);
+    \WP_CLI::add_command('create-post-type', [$this, 'createPostType']);
   }
 
 
