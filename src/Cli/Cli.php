@@ -12,13 +12,9 @@ class Cli
 
   public function registerCommands()
   {
-    \WP_CLI::add_command('create-post-type', [$this, 'hello']);
+    \WP_CLI::add_command('create-post-type', [$this, 'create-post-type']);
   }
 
-  public function hello()
-  {
-    \WP_CLI::success('Hello World');
-  }
 
   public function createPostType($args, $assocArgs)
   {
