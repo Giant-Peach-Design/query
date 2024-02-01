@@ -24,6 +24,35 @@ class Query
     return $posts;
   }
 
+  /**
+   * Get array with posts and pagination
+   *
+   * @return array
+   */
+  public static function getQueryResults(string $postType = 'post', int $perPage = 3, $args = [])
+  {
+    $defaults = [
+      'post_type' => $postType,
+      'posts_per_page' => $perPage,
+    ];
+
+    $args = array_merge($defaults, $args);
+
+    $query = new \WP_Query($args);
+
+    $posts = [];
+    $pagination = [];
+
+    for ($i = 0; $i < $query->post_count; $i++) {
+      $posts[] = new Post($query->posts[$i]);
+    }
+
+    return [
+      'posts' => $posts,
+      'pagination' => new Pagination($query)
+    ];
+  }
+
   public static function getPost($args = [])
   {
     $defaults = [
